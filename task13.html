@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Dropdowns</title>
+    <style>
+        /* Basic reset for list styles */
+        ul, li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        /* The main dropdown container */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* The items in the dropdown */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        /* Nested items container */
+        .dropdown-content .sub-dropdown {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            background-color: #f9f9f9;
+        }
+
+        /* Dropdown links/items */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Show the dropdown */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Show the nested dropdown when hover */
+        .dropdown-content li:hover > .sub-dropdown {
+            display: block;
+        }
+        
+        /* Style for hovering over items */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<div class="dropdown">
+    <span>Menu</span>
+    <ul class="dropdown-content">
+        <li><a href="#">Link 1</a></li>
+        <li>
+            <a href="#">Link 2</a>
+            <ul class="sub-dropdown">
+                <li><a href="#">Sublink 1</a></li>
+                <li><a href="#">Sublink 2</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Link 3</a></li>
+    </ul>
+</div>
+
+</body>
+</html>

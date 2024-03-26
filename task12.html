@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login and Signup Forms</title>
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+  }
+
+  .form-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  input[type="text"], input[type="password"] {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: calc(100% - 22px); /* Full width minus padding and border */
+  }
+
+  input[type="submit"] {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+
+  .link {
+    cursor: pointer;
+    color: #007bff;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div id="loginForm" class="form-container" style="display: flex;">
+  <h2>Login</h2>
+  <input type="text" placeholder="Username">
+  <input type="password" placeholder="Password">
+  <input type="submit" value="Login">
+  <span class="link" onclick="showSignup()">Don't have an account? Sign up</span>
+</div>
+
+<div id="signupForm" class="form-container">
+  <h2>Signup</h2>
+  <input type="text" placeholder="Username">
+  <input type="password" placeholder="Password">
+  <input type="submit" value="Signup">
+  <span class="link" onclick="showLogin()">Have an account? Login</span>
+</div>
+
+<script>
+function showSignup() {
+  document.getElementById('loginForm').style.display = 'none';
+  document.getElementById('signupForm').style.display = 'flex';
+}
+
+function showLogin() {
+  document.getElementById('signupForm').style.display = 'none';
+  document.getElementById('loginForm').style.display = 'flex';
+}
+
+// Initially show the login form
+showLogin();
+</script>
+
+</body>
+</html>
